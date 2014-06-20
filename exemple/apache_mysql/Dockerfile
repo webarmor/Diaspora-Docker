@@ -1,0 +1,1 @@
+FROM chocobozzz/diaspora:with_apache_mysql
