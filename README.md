@@ -8,7 +8,7 @@
 
 ## Without_http_sql
 
-From the Debian Wheezy image, the Dockerfile :
+From the **Debian Wheezy** image, the Dockerfile :
 
  - Install all packages needed by Diaspora (ruby from rvm)
  - Add diaspora user
@@ -16,7 +16,7 @@ From the Debian Wheezy image, the Dockerfile :
 
 ## With_http_sql
 
-From the without_htt_sql image, the Dockerfile :
+From the **without_htt_sql** image, the Dockerfile :
     
  - Install apache/nginx 
  - Enable modules for the http server
@@ -27,7 +27,7 @@ From the without_htt_sql image, the Dockerfile :
 
 ## Final (Example)
 
-From the with_http_sql image, the Dockerfile just build an image from a **with_http_sql** image. You have to put in the directory of the Dockerfile :
+From the **with_http_sql** image, the Dockerfile build the final Diaspora image with your the configuration you want. You have to put in the directory of the Dockerfile :
     
  - database.yml with the password you want for diaspora
  - diaspora.conf (conf for the http server)
