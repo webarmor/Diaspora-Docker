@@ -2,9 +2,9 @@
 
 ## Steps : 
 
- - build without_http_sql from Debian Wheezy
- - build with_http_sql from without_http_sql 
- - build diaspora final from with_http_sql
+ - build **without_http_sql** from **Debian Wheezy**
+ - build **with_http_sql** from **without_http_sql** 
+ - build **final diaspora** from **with_http_sql**
 
 ## Without_http_sql
 
@@ -27,7 +27,7 @@ The Dockerfile :
 
 ## Final
 
-The Dockerfile just build an image from a with_http_sql image. You have to put in the directory of the Dockerfile :
+The Dockerfile just build an image from a **with_http_sql** image. You have to put in the directory of the Dockerfile :
     
  - database.yml with the password you want for diaspora
  - diaspora.conf (conf for the http server)
