@@ -25,7 +25,7 @@ The Dockerfile :
  - Add triggers instruction when the image will be used as the base for the final build (add configurations, run install scripts ...)
 
 
-## Final
+## Final (Example)
 
 The Dockerfile just build an image from a **with_http_sql** image. You have to put in the directory of the Dockerfile :
     
