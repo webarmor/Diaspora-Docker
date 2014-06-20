@@ -1,1 +1,1 @@
-FROM chocobozzz/diaspora:with_apache_mysql
+FROM chocobozzz/diaspora-docker:with_apache_mysql
