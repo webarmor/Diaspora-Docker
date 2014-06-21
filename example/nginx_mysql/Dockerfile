@@ -1,0 +1,1 @@
+FROM chocobozzz/diaspora-docker:with_nginx_mysql
