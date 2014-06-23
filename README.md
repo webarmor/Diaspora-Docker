@@ -30,7 +30,7 @@ From the **without_http_sql** image, the Dockerfile :
 
 ## Final (Example)
 
-From the **with_http_sql** image, the Dockerfile build the final Diaspora image with the configuration you want. You have to put in the directory of the Dockerfile :
+From the **with_http_sql** image, the Dockerfile builds the final Diaspora image with the configuration you want. You have to put in the directory of the Dockerfile :
     
  - database.yml with the password you want for diaspora
  - diaspora.conf (conf for the http server)
