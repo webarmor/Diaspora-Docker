@@ -1,5 +1,8 @@
 # Diaspora-Docker
 
+## Arch
+![Architecture](https://lut.im/0nwibFDt/MivG8C0P)
+
 ## Steps : 
 
  - build **without_http_sql** from **Debian Wheezy**
