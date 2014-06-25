@@ -1,0 +1,1 @@
+FROM chocobozzz/diaspora-docker:with_apache_postgre
