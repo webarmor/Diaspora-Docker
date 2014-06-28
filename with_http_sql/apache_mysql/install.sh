@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mysqlRoot="mysqlroot"
-mysqlDiaspora=$(grep "[^#]password" /home/diaspora/diaspora/config/database.yml | sed "s/\(\s*password:\s*\"\)//" | sed "s/\"\s*$//")
+mysqlDiaspora=$(grep "^\s*[^#]\s*password" /home/diaspora/diaspora/config/database.yml | sed "s/\(\s*password:\s*\"\)//" | sed "s/\"\s*$//")
 
 # Start MySQL
 mysqld_safe &
