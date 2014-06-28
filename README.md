@@ -60,10 +60,17 @@ Choose the http server (Apache or NGinx) and the DBMS (MySQL or PostgreSQL) you 
     docker pull chocobozzz/diaspora-docker:with_{apache,nginx}_{mysql,postgre}
 
 Now you have to create a new Docker image. But you need the configuration files : database.yml, diaspora.conf (http server), diaspora.yml, diaspora.crt and diaspora.key (for SSL) (you have examples in the "example" directory of my Github).
+
+You have to create a Dockerfile which will just build the final image from the with_http_sql image :
+
+    echo "FROM chocobozzz/diaspora-docker:with_{apache,nginx}_{mysql,postgre}" > Dockerfile
+
+Of course, you can add other instructions.
     
+During the building, Docker will add your configuration files in the image and will "install" Diaspora. Now, you have the Diaspora you wanted :)
+
     docker build -t chocobozzz/diaspora:{apache,nginx}_{mysql,postgre} dir_which_contains_confs < Dockerfile
 
-During the building, Docker will add your configuration files in the image and will "install" Diaspora. Now, you have the Diaspora you wanted :)
 
     
 
