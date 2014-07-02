@@ -1,5 +1,7 @@
 /usr/bin/mysqld_safe & 
 
+/usr/bin/redis-server &
+
 export APACHE_RUN_USER=www-data
 export APACHE_RUN_GROUP=www-data
 export APACHE_LOG_DIR=/var/log/apache2

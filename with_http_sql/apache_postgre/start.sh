@@ -1,5 +1,7 @@
 sudo -u postgres /usr/lib/postgresql/9.1/bin/postgres -D /etc/postgresql/9.1/main -c config_file=/etc/postgresql/9.1/main/postgresql.conf &
 
+/usr/bin/redis-server &
+
 export APACHE_RUN_USER=www-data
 export APACHE_RUN_GROUP=www-data
 export APACHE_LOG_DIR=/var/log/apache2

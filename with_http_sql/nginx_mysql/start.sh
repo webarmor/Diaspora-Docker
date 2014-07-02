@@ -1,5 +1,7 @@
 /usr/bin/mysqld_safe & 
 
+/usr/bin/redis-server &
+
 /usr/sbin/nginx &
 
 sleep 5
