@@ -2,7 +2,7 @@ FROM debian:wheezy
 MAINTAINER Florian Bigard <florian.bigard@gmail.com>
 
 # NodeJS
-RUN echo "deb http://http.us.debian.org/debian wheezy-backports main" >> /etc/apt/sources.list
+#RUN echo "deb http://http.us.debian.org/debian wheezy-backports main" >> /etc/apt/sources.list
 
 RUN apt-get update
 RUN apt-get -y upgrade
