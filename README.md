@@ -52,6 +52,8 @@ An example for development use could be :
     docker run -d -P image_id
     docker ps   # To see https port
     curl https://localhost:https_port -k
+
+**Warning :** RAILS_ENV is set to production. See dev directory for real development (without assets precompiled).
     
 ### Production
 
