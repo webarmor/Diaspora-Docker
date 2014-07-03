@@ -23,5 +23,8 @@ echo "GRANT SELECT, LOCK TABLES, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, \
         ALTER ON diaspora_test.* TO 'diaspora'@'localhost';" | mysql \
             --user=root --password=$mysqlRoot
 
+rvm use 2.0.0-p353
+cd diaspora
 
-sudo -u diaspora -i /bin/bash --login /home/diaspora/install_diaspora.sh
+bundle install
+bundle exec rake db:create db:schema:load

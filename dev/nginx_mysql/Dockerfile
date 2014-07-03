@@ -15,7 +15,6 @@ RUN echo mysql-server mysql-server/root_password password $MYSQLTMPROOT | debcon
 RUN apt-get clean
 
 ADD install.sh /home/diaspora/install.sh
-ADD install_diaspora.sh /home/diaspora/install_diaspora.sh
 ADD start.sh /home/diaspora/start.sh
 
 ADD database.yml  /home/diaspora/diaspora/config/database.yml

@@ -6,4 +6,4 @@
 
 sleep 5
 
-sudo -u diaspora -i "/home/diaspora/diaspora/script/server"
+/home/diaspora/diaspora/script/server
