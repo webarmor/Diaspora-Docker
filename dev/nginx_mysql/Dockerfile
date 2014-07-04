@@ -3,6 +3,9 @@ MAINTAINER Florian Bigard <florian.bigard@gmail.com>
 
 ENV MYSQLTMPROOT temprootpass
 
+# Install ruby for root
+RUN echo 'export PATH="$PATH:/home/diaspora/.rvm/gems/ruby-2.0.0-p353/wrappers"' >> /root/.bashrc
+
 # Install Apache
 RUN apt-get -y install -t wheezy-backports nginx
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
@@ -21,6 +24,7 @@ ADD database.yml  /home/diaspora/diaspora/config/database.yml
 ADD diaspora.yml  /home/diaspora/diaspora/config/diaspora.yml
 ADD diaspora.crt  /home/diaspora/diaspora.crt
 ADD diaspora.key  /home/diaspora/diaspora.key
+
 RUN /home/diaspora/install.sh
 
 ADD diaspora.conf /etc/nginx/sites-enabled/diaspora.conf

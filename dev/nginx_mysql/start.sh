@@ -1,3 +1,6 @@
+# Ruby
+source /root/.bashrc
+
 /usr/bin/mysqld_safe & 
 
 /usr/bin/redis-server &
