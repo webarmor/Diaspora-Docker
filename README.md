@@ -2,7 +2,7 @@
 
 ## HOW TO
 
-See (HOW TO Wiki)[https://github.com/Chocobozzz/Diaspora-Docker/wiki/How-To]
+See [HOW TO Wiki](https://github.com/Chocobozzz/Diaspora-Docker/wiki/How-To)
 
 ## Architecture
 
