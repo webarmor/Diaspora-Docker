@@ -24,10 +24,21 @@ From the **Debian Wheezy** image, the Dockerfile :
 From the **without_http_sql** image, the Dockerfile :
     
  - Install apache/nginx 
- - Enable modules for the http server
+ - Enable modules for the http server (apache)
  - Install mysql/postgresql with a default password
  - Add shell scripts to install and start diaspora
  - Add triggers instruction when the image will be used as the base for the final build (add configurations, run install scripts ...)
+
+
+### Dev (without assets precompiled)
+
+From the **without_http_sql** image, the Dockerfile :
+    
+ - Install nginx 
+ - Install mysql
+ - Add default configuration files
+ - Install Diaspora without assets precompiled
+ - Autostart Diaspora when run the image 
 
 
 ### Final (Example)
@@ -40,40 +51,6 @@ From the **with_http_sql** image, the Dockerfile builds the final Diaspora image
  - diaspora.key
  - diaspora.yml
 
-## Installation
+## HOW TO
 
-### Development
-
-Choose the http server (Apache or NGinx) and the DBMS (MySQL or PostgreSQL) you want. Final images are built to force https with a self signed certificate. The password of diaspora user for database is simply "diaspora_password".
-
-An example for development use could be :
-
-    docker pull chocobozzz/diaspora-docker:final_{apache,nginx}_{mysql,postgre}
-    docker run -d -P image_id
-    docker ps   # To see https port
-    curl https://localhost:https_port -k
-
-**Warning :** RAILS_ENV is set to production. See dev directory for real development (without assets precompiled).
-    
-### Production
-
-Choose the http server (Apache or NGinx) and the DBMS (MySQL or PostgreSQL) you want. Now you have to pull the Docker image which have all dependencies, Diaspora sources, http server, DBMS... :
-
-    docker pull chocobozzz/diaspora-docker:with_{apache,nginx}_{mysql,postgre}
-
-Now you have to create a new Docker image. But you need the configuration files : database.yml, diaspora.conf (http server), diaspora.yml, diaspora.crt and diaspora.key (for SSL) (you have examples in the "example" directory of my Github).
-
-You have to create a Dockerfile which will just build the final image from the with_http_sql image :
-
-    echo "FROM chocobozzz/diaspora-docker:with_{apache,nginx}_{mysql,postgre}" > Dockerfile
-
-Of course, you can add other instructions.
-    
-During the building, Docker will add your configuration files in the image and will "install" Diaspora. Now, you have the Diaspora you wanted :)
-
-    docker build -t chocobozzz/diaspora:{apache,nginx}_{mysql,postgre} dir_which_contains_confs < Dockerfile
-
-
-    
-
-
+See (HOW TO Wiki)[https://github.com/Chocobozzz/Diaspora-Docker/wiki/How-To]
