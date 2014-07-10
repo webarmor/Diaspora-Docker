@@ -1,5 +1,9 @@
 # Diaspora-Docker
 
+## HOW TO
+
+See (HOW TO Wiki)[https://github.com/Chocobozzz/Diaspora-Docker/wiki/How-To]
+
 ## Architecture
 
 ### Diagram
@@ -51,6 +55,4 @@ From the **with_http_sql** image, the Dockerfile builds the final Diaspora image
  - diaspora.key
  - diaspora.yml
 
-## HOW TO
 
-See (HOW TO Wiki)[https://github.com/Chocobozzz/Diaspora-Docker/wiki/How-To]
