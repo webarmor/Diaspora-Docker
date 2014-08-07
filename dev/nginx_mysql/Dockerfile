@@ -6,6 +6,10 @@ ENV MYSQLTMPROOT temprootpass
 # Install ruby for root
 RUN echo 'export PATH="$PATH:/home/diaspora/.rvm/gems/ruby-2.0.0-p353/wrappers"' >> /root/.bashrc
 
+# Update and upgrade
+RUN apt-get update
+RUN apt-get -y upgrade
+
 # Install Apache
 RUN apt-get -y install -t wheezy-backports nginx
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
