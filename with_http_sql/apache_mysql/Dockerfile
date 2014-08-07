@@ -3,6 +3,10 @@ MAINTAINER Florian Bigard <florian.bigard@gmail.com>
 
 ENV MYSQLTMPROOT temprootpass
 
+# Update and upgrade
+RUN apt-get update
+RUN apt-get -y upgrade
+
 # Install Apache
 RUN apt-get -y install apache2
 
