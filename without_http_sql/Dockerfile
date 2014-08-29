@@ -11,7 +11,7 @@ RUN apt-get -y install -t wheezy-backports redis-server
 
 RUN apt-get clean
 
-RUN useradd -m -d /home/diaspora -s /bin/bash -p diaspora diaspora ; cd /home/diaspora ; curl -4 -L dspr.tk/1t | sudo -u diaspora -i
+RUN useradd -m -d /home/diaspora -s /bin/bash -p diaspora diaspora ; cd /home/diaspora ; echo "curl -L https://get.rvm.io | bash -s stable" | sudo -u diaspora -i
 
 WORKDIR /home/diaspora
 RUN sudo -u diaspora -i rvm autolibs read-only ; sudo -u diaspora -i rvm install 2.0.0-p353
