@@ -14,8 +14,7 @@ RUN apt-get clean
 RUN useradd -m -d /home/diaspora -s /bin/bash -p diaspora diaspora ; cd /home/diaspora ; echo "curl -L https://get.rvm.io | bash -s stable" | sudo -u diaspora -i
 
 WORKDIR /home/diaspora
-RUN sudo -u diaspora -i rvm autolibs read-only ; sudo -u diaspora -i rvm install 2.0.0-p353
-RUN echo 'export PATH="$PATH:/home/diaspora/.rvm/gems/ruby-2.0.0-p353/wrappers"' >> .bashrc
+RUN sudo -u diaspora -i rvm autolibs read-only ; sudo -u diaspora -i rvm install 2.0
 RUN sudo -u diaspora git clone -b master https://github.com/diaspora/diaspora.git
 
 WORKDIR diaspora

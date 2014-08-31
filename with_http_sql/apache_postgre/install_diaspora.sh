@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rvm use 2.0.0-p353
+rvm use 2.0
 cd diaspora
 
 RAILS_ENV=production  DB=postgres  bundle install --without test development

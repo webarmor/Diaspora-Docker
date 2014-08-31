@@ -1,6 +1,3 @@
-# Ruby
-source /root/.bashrc
-
 /usr/bin/mysqld_safe & 
 
 /usr/bin/redis-server &
@@ -9,4 +6,5 @@ source /root/.bashrc
 
 sleep 5
 
-/home/diaspora/diaspora/script/server
+sudo -u diaspora -i rvm use 2.0
+echo 'cd /home/diaspora/diaspora/ && script/server' | sudo -u diaspora -i

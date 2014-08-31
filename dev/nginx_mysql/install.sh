@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Ruby
-source /root/.bashrc
-
 mysqlRoot="mysqlroot"
 mysqlDiaspora=$(grep "^\s*[^#]\s*password" /home/diaspora/diaspora/config/database.yml | sed "s/\(\s*password:\s*\"\)//" | sed "s/\"\s*$//")
 
@@ -26,7 +23,5 @@ echo "GRANT SELECT, LOCK TABLES, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, \
         ALTER ON diaspora_test.* TO 'diaspora'@'localhost';" | mysql \
             --user=root --password=$mysqlRoot
 
-cd /home/diaspora/diaspora
-
-bundle install
-bundle exec rake db:create db:schema:load
+sudo -u diaspora -i rvm use 2.0
+echo 'cd /home/diaspora/diaspora && bundle install && bundle exec rake db:create db:schema:load' | sudo -u diaspora -i
