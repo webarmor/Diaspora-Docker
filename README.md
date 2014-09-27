@@ -4,6 +4,50 @@
 
 See [HOW TO Wiki](https://github.com/Chocobozzz/Diaspora-Docker/wiki/How-To)
 
+## Update your image
+
+You have two differents ways to update your image :
+
+### Rebuild the image
+
+You need to export your *database*, the *public/uploads* directory and you configuration files (*config/*). 
+
+Then, you just need to **git pull** or **git clone** the repository and rebuild a new image. In your new image, reimport the *database* and the *public/uploads* repository. 
+
+Finally, you need to modify the new *config/* files to have the same options than the previous image.
+
+### Update manually
+
+Stop your image :
+
+    # docker stop your_instance_id
+
+Commit your image to save it :
+
+     # docker commit your_instance_id your_image_name:your_tag
+
+Get the tty of your image :
+
+     # docker run -i -t your_image_id
+ 
+Upgrade the system :
+
+     # apt-get update && apt-get upgrade
+ 
+Become the diaspora user :
+
+     # su diaspora
+ 
+Update Diaspora with the updating guide : https://wiki.diasporafoundation.org/Updating
+
+Exit from your image, and commit it :
+
+    # docker commit your_instance_updated_id your_image_updated_name:your_tag
+
+ 
+
+
+
 ## Architecture
 
 ### Diagram
