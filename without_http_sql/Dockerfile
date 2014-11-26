@@ -10,7 +10,9 @@ RUN apt-get -y install net-tools gawk libreadline6-dev libyaml-dev libsqlite3-de
 
 RUN apt-get clean
 
-RUN useradd -m -d /home/diaspora -s /bin/bash -p diaspora diaspora ; cd /home/diaspora ; echo "curl -L https://get.rvm.io | bash -s stable" | sudo -u diaspora -i
+RUN useradd -m -d /home/diaspora -s /bin/bash -p diaspora diaspora
+RUN echo "curl -sSL https://rvm.io/mpapis.asc | gpg --import -" | sudo -u diaspora -i
+RUN cd /home/diaspora ; echo "curl -L https://get.rvm.io | bash -s stable" | sudo -u diaspora -i
 
 WORKDIR /home/diaspora
 RUN sudo -u diaspora -i rvm autolibs read-only ; sudo -u diaspora -i rvm install 2.0
