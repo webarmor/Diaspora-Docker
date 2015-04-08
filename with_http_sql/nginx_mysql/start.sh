@@ -6,5 +6,4 @@
 
 sleep 5
 
-sudo -u diaspora -i rvm use 2.0
-echo 'cd /home/diaspora/diaspora/ && script/server' | sudo -u diaspora -i
+sudo -u diaspora -i /home/diaspora/diaspora/script/server

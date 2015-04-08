@@ -1,6 +1,5 @@
 #!/bin/bash
 
-rvm use 2.0
 cd diaspora
 
 RAILS_ENV=production bundle install --without test development

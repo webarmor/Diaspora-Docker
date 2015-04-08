@@ -16,6 +16,8 @@ RUN cd /home/diaspora ; echo "curl -L https://get.rvm.io | bash -s stable" | sud
 
 WORKDIR /home/diaspora
 RUN sudo -u diaspora -i rvm autolibs read-only ; sudo -u diaspora -i rvm install 2.0
-RUN sudo -u diaspora git clone -b master https://github.com/diaspora/diaspora.git
+RUN echo "source /home/diaspora/.rvm/scripts/rvm && gem install bundle" | sudo -u diaspora -i
+RUN sudo -u diaspora git clone https://github.com/diaspora/diaspora.git
+RUN echo "cd diaspora && git checkout master" | sudo -u diaspora -i
 
 WORKDIR diaspora

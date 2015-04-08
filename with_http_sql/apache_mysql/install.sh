@@ -17,4 +17,4 @@ echo "GRANT SELECT, LOCK TABLES, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, \
         ALTER ON diaspora_production.* TO 'diaspora'@'localhost';" | mysql \
             --user=root --password=$mysqlRoot
 
-sudo -u diaspora -i /bin/bash --login /home/diaspora/install_diaspora.sh
+sudo -u diaspora -i /bin/bash /home/diaspora/install_diaspora.sh

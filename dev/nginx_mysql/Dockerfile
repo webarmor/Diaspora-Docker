@@ -18,6 +18,8 @@ RUN echo mysql-server mysql-server/root_password password $MYSQLTMPROOT | debcon
 
 RUN apt-get clean
 
+RUN echo "cd /home/diaspora/diaspora/ && git checkout develop" | sudo -u diaspora -i
+
 ADD install.sh /home/diaspora/install.sh
 ADD start.sh /home/diaspora/start.sh
 
