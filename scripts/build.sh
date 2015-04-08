@@ -1,12 +1,14 @@
 #!/usr/bin/sh
 
+basePath=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 declare -A paths=( 
-  ["without_http_sql"]="../without_http_sql/" 
-  ["with_apache_mysql"]="../with_http_sql/apache_mysql/" 
-  ["with_apache_postgre"]="../with_http_sql/apache_postgre" 
-  ["with_nginx_mysql"]="../with_http_sql/nginx_mysql" 
-  ["with_nginx_postgre"]="../with_http_sql/nginx_postgre" 
-  ["dev_nginx_mysql"]="../dev/nginx_mysql" 
+  ["without_http_sql"]="$basePath/../without_http_sql/"
+  ["with_apache_mysql"]="$basePath/../with_http_sql/apache_mysql/"
+  ["with_apache_postgre"]="$basePath/../with_http_sql/apache_postgre"
+  ["with_nginx_mysql"]="$basePath/../with_http_sql/nginx_mysql"
+  ["with_nginx_postgre"]="$basePath/../with_http_sql/nginx_postgre"
+  ["dev_nginx_mysql"]="$basePath/../dev/nginx_mysql"
 )
 
 function print_help {
