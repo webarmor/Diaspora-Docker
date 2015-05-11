@@ -8,7 +8,7 @@ See [HOW TO Wiki](https://github.com/Chocobozzz/Diaspora-Docker/wiki/How-To)
 
 You have two differents ways to update your image :
 
-### Rebuild the image
+### Or rebuild the image
 
 You need to export your *database*, the *public/uploads* directory and you configuration files (*config/*). 
 
