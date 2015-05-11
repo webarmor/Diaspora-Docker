@@ -40,6 +40,10 @@ Become the diaspora user :
  
 Update Diaspora with the updating guide : https://wiki.diasporafoundation.org/Updating
 
+**Note:** If you need to update *rvm*, you'll need to specify the `--default` option with `rvm use`. Example:
+
+    rvm use 2.1 --default
+
 Exit from your image, and commit it :
 
     # docker commit your_instance_updated_id your_image_updated_name:your_tag
