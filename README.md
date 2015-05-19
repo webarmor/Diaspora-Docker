@@ -8,7 +8,7 @@ See [HOW TO Wiki](https://github.com/Chocobozzz/Diaspora-Docker/wiki/How-To)
 
 You have two differents ways to update your image :
 
-### Or rebuild the image
+### Rebuild the image
 
 You need to export your *database*, the *public/uploads* directory and you configuration files (*config/*). 
 
@@ -16,7 +16,7 @@ Then, you just need to **git pull** or **git clone** the repository and rebuild 
 
 Finally, you need to modify the new *config/* files to have the same options than the previous image.
 
-### Update manually
+### Or update manually
 
 Stop your image :
 
