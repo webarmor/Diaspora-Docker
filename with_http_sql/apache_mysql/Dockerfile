@@ -1,6 +1,8 @@
 FROM chocobozzz/diaspora-docker:without_http_sql
 MAINTAINER Florian Bigard <florian.bigard@gmail.com>
 
+ENV DEBIAN_FRONTEND noninteractive
+
 ENV MYSQLTMPROOT temprootpass
 
 # Update and upgrade
