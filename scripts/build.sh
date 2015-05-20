@@ -9,21 +9,25 @@ declare -A paths=(
   ["with_nginx_mysql"]="$basePath/../with_http_sql/nginx_mysql"
   ["with_nginx_postgre"]="$basePath/../with_http_sql/nginx_postgre"
   ["dev_nginx_mysql"]="$basePath/../dev/nginx_mysql"
+  ["apache_mysql_example"]="$basePath/../example/apache_mysql/"
+  ["apache_postgre_example"]="$basePath/../example/apache_postgre"
+  ["nginx_mysql_example"]="$basePath/../example/nginx_mysql"
+  ["nginx_postgre_example"]="$basePath/../example/nginx_postgre"
 )
 
 function print_help {
   echo -e "Please, choose what you want to build :"
-  echo -e "\t1) Without HTTP server and SQL DBMS"
-  echo -e "\t2) With Apache and MySQL"
-  echo -e "\t3) With Apache and PostgreSQL"
-  echo -e "\t4) With NGinx and MySQL"
-  echo -e "\t5) With NGinx and PostgreSQL"
-  echo -e "\t6) With NGinx and MySQL (for development)"
-  echo -e "\t*) Quit"
-}
-
-function print_what_next {
-  echo -e "\nNow you can build the final image (see the example directory)."
+  echo -e "\t1)  Without HTTP server and SQL DBMS"
+  echo -e "\t2)  With Apache and MySQL"
+  echo -e "\t3)  With Apache and PostgreSQL"
+  echo -e "\t4)  With NGinx and MySQL"
+  echo -e "\t5)  With NGinx and PostgreSQL"
+  echo -e "\t6)  With NGinx and MySQL (for development)"
+  echo -e "\t7)  Apache and MySQL example"
+  echo -e "\t8)  Apache and PostgreSQL example"
+  echo -e "\t9)  NGinx and MySQL example"
+  echo -e "\t10) NGinx and PostgreSQL example"
+  echo -e "\t*)  Quit\n"
 }
 
 function without_http_sql {
@@ -50,6 +54,22 @@ function dev_nginx_mysql {
   sudo docker build -t chocobozzz/diaspora-docker:dev_nginx_mysql ${paths["dev_nginx_mysql"]}
 }
 
+function apache_mysql_example {
+  sudo docker build -t chocobozzz/diaspora-docker:apache_mysql ${paths["apache_mysql_example"]}
+}
+
+function apache_postgre_example {
+  sudo docker build -t chocobozzz/diaspora-docker:apache_postgre ${paths["apache_postgre_example"]}
+}
+
+function nginx_mysql_example {
+  sudo docker build -t chocobozzz/diaspora-docker:nginx_mysql ${paths["nginx_mysql_example"]}
+}
+
+function nginx_postgre_example {
+  sudo docker build -t chocobozzz/diaspora-docker:nginx_postgre ${paths["nginx_postgre_example"]}
+}
+
 print_help
 read choice
 
@@ -60,5 +80,8 @@ case $choice in
   4) with_nginx_mysql ;;
   5) with_nginx_postgre ;;
   6) dev_nginx_mysql ;;
-  *) echo "Goodbye." ;;
+  7) apache_mysql_example ;;
+  8) apache_postgre_example ;;
+  9) nginx_mysql_example ;;
+  10) nginx_postgre_example ;;
 esac
