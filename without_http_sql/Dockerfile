@@ -1,6 +1,8 @@
 FROM debian:wheezy
 MAINTAINER Florian Bigard <florian.bigard@gmail.com>
 
+ENV DEBIAN_FRONTEND noninteractive
+
 # NodeJS
 RUN echo "deb http://http.us.debian.org/debian wheezy-backports main" >> /etc/apt/sources.list
 
