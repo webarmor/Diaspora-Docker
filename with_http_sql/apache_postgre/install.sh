@@ -3,7 +3,7 @@
 mysqlRoot="mysqlroot"
 mysqlDiaspora=$(grep "^\s*[^#]\s*password" /home/diaspora/diaspora/config/database.yml | sed "s/\(\s*password:\s*\"\)//" | sed "s/\"\s*$//")
 
-sudo -u postgres /usr/lib/postgresql/9.1/bin/postgres -D /etc/postgresql/9.1/main -c config_file=/etc/postgresql/9.1/main/postgresql.conf &
+sudo -u postgres /usr/lib/postgresql/9.4/bin/postgres -D /etc/postgresql/9.4/main -c config_file=/etc/postgresql/9.4/main/postgresql.conf &
 sleep 20
 
 sudo -u postgres psql --command "CREATE USER diaspora WITH PASSWORD '$mysqlDiaspora';"
