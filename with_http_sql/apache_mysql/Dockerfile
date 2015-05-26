@@ -30,7 +30,7 @@ ONBUILD ADD diaspora.key  /home/diaspora/diaspora.key
 ONBUILD RUN /home/diaspora/install.sh
 
 ONBUILD ADD diaspora.conf /etc/apache2/sites-enabled/000-default.conf
-ONBUILD RUN a2enmod ssl proxy proxy_balancer proxy_http headers rewrite
+ONBUILD RUN a2enmod ssl proxy proxy_balancer proxy_http headers rewrite lbmethod_byrequests slotmem_shm 
 
 ONBUILD EXPOSE 80
 ONBUILD EXPOSE 443

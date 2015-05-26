@@ -10,7 +10,7 @@ RUN apt-get update
 RUN apt-get -y upgrade
 
 # Install Apache
-RUN apt-get -y install -t wheezy-backports nginx
+RUN apt-get -y install nginx
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 # Install MySQL

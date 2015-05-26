@@ -14,9 +14,12 @@ RUN echo "curl -sSL https://rvm.io/mpapis.asc | gpg --import -" | sudo -u diaspo
 RUN cd /home/diaspora ; echo "curl -L https://get.rvm.io | bash -s stable" | sudo -u diaspora -i
 
 WORKDIR /home/diaspora
-RUN sudo -u diaspora -i rvm autolibs read-only ; sudo -u diaspora -i rvm install 2.0
-RUN echo "source /home/diaspora/.rvm/scripts/rvm && gem install bundle" | sudo -u diaspora -i
+
+RUN sudo -u diaspora -i rvm autolibs read-only ; sudo -u diaspora -i rvm install 2.1
+RUN sudo -u diaspora -i gem install bundler
+
 RUN sudo -u diaspora git clone https://github.com/diaspora/diaspora.git
 RUN echo "cd diaspora && git checkout master" | sudo -u diaspora -i
+RUN echo "Diaspora::Application.config.secret_key_base = 'aefeiru87675abbbcddd13' > /home/diaspora/diaspora/config/initializers/secret_token.rb"
 
 WORKDIR diaspora

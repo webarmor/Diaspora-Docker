@@ -6,7 +6,7 @@ END='\033[m' # No Color
 
 base_path=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 outputs_dir="$base_path/output"
-build="$base_path/build.sh"
+build_command="$base_path/build.sh"
 # Number of lines just for the menu, to skip it when we want to print errors
 lines=$(( $(echo 0 | $build | wc -l) + 1 ))
 
@@ -23,7 +23,7 @@ clean () {
   echo "########### Cleaning ###########"
   
   runnings=$(sudo docker ps -a | awk ' $1 != "CONTAINER" { print $1 } ')
-  images=$(sudo docker images | grep "chocobozzz/diaspora-docker" | awk '{ print $3 }')
+  images=$(sudo docker images | egrep "(chocobozzz\/diaspora-docker)|(none)" | awk '{ print $3 }')
 
   for i in $runnings; do
     echo "Stopping and removing $i container."
@@ -45,7 +45,10 @@ clean () {
 # Return the status code of the docker build
 make_build_test () {
   echo "########### Building $1 ###########"
-  echo $2 | $build | awk "NR>=$lines" > "$outputs_dir/build/$(echo $1 | sed 's/\s/_/g')"
+  
+  sleep 2
+
+  echo $2 | $build_command > "$outputs_dir/build/$(echo $1 | sed 's/\s/_/g')"
 
   if [ ${PIPESTATUS[1]} -ne 0 ] ; then
     printf "${ERR}FAILED${END}\n"
@@ -74,12 +77,12 @@ check_build_error () {
 # Write logs in output_dir/run
 make_run_test() {
   echo "########### Testing image $1 ###########"
-
+  
   echo -e "\nAcquiring sudo..."
   sudo echo -e "Sudo acquired, thanks !\n"
   sudo docker run --name test -a STDOUT -a STDERR -p 48880:80 -p 48443:443 $2 &> "$outputs_dir/run/running_servers/$(echo $1 | sed 's/\s/_/g')" &
   sudo echo -e "Docker image running\n"
-
+  
   success=0
   for i in $(seq 0 30); do
     echo -n "."
@@ -101,6 +104,8 @@ make_run_test() {
   sudo docker rm test &> /dev/null
 
   echo -e "\n\n"
+
+  return $success
 }
 
 # Create the output directory and backup the old one
