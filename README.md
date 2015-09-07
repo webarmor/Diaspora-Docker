@@ -17,7 +17,7 @@ You can run it like so:
 
 	# docker run --name=diaspora --rm -it -p 10080:3000 immunio/diaspora:latest
 
-Or use the provided script:
+Or use the provided script (edit the paths to suit your system first!):
 
 	# ./run_diaspora.sh
 
