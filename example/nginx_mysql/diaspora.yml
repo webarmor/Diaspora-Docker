@@ -125,7 +125,7 @@ configuration: ## Section
       ## Serve static assets via the appserver (default=false).
       ## This is highly discouraged for production use. Let your reverse
       ## proxy/webserver do it by serving the files under public/ directly.
-      #serve: false
+      serve: true
 
       ## Upload your assets to S3 (default=false).
       #upload: false
@@ -407,14 +407,14 @@ configuration: ## Section
     ## **or** an encrypted key for an unhosted button.
     paypal_donations: ## Section
       #enable: false
-    
+
       ## Currency used (USD, EUR...)
       #currency: USD
-    
+
       ## hosted Paypal button id
       #paypal_hosted_button_id: "change_me"
       ## OR encrypted key of unhosted button
-      #paypal_unhosted_button_encrypted: "-----BEGIN PKCS7-----" 
+      #paypal_unhosted_button_encrypted: "-----BEGIN PKCS7-----"
 
     ## Bitcoin donations
     ## You can provide a bitcoin address here to allow your users to provide

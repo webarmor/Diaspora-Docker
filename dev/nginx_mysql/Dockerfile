@@ -21,7 +21,7 @@ RUN echo mysql-server mysql-server/root_password password $MYSQLTMPROOT | debcon
 RUN apt-get clean
 
 # Update Ruby
-RUN sudo -u diaspora -i rvm autolibs read-only ; sudo -u diaspora -i rvm install 2.2 ; sudo -u diaspora -i rvm use --default 2.2
+RUN sudo -u diaspora -i rvm autolibs read-only ; sudo -u diaspora -i rvm install 2.2.1 ; sudo -u diaspora -i rvm use --default 2.2.1
 RUN sudo -u diaspora -i gem install bundler
 
 RUN echo "cd /home/diaspora/diaspora/ && git checkout develop" | sudo -u diaspora -i
