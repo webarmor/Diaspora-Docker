@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 ERR='\033[0;31m'
 OK='\033[0;32m'
