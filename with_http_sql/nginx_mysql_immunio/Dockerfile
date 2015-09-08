@@ -1,4 +1,4 @@
-FROM chocobozzz/diaspora-docker:without_http_sql
+FROM quay.io/immunio/diaspora-first
 MAINTAINER Florian Bigard <florian.bigard@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
