@@ -1,4 +1,4 @@
-FROM quay.io/immunio/diaspora-first
+FROM quay.io/immunio/diaspora-first:quay
 MAINTAINER Florian Bigard <florian.bigard@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive

@@ -1,1 +1,1 @@
-FROM quay.io/immunio/diaspora-second
+FROM quay.io/immunio/diaspora-second:quay
